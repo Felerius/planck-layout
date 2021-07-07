@@ -1,9 +1,8 @@
 # Planck keyboard layout
 
-Keyboard layout for my
-[Planck keyboard (rev. 4)][planck] that I have been using and improving since
-2017. It uses the awesome [QMK firmware][qmk]. I had the following
-while creating it:
+Layout for my [Planck keyboard (rev. 4)][planck] that I have been using and
+improving since 2017. It uses the awesome [QMK firmware][qmk]. I had the
+following goals while creating it:
 
 * Support for both the Qwerty and [Colemak](https://colemak.com/) layouts
 * Easy access to commonly used programming symbols, most importantly `(`/`[`/`{`
@@ -31,10 +30,11 @@ Base layer using the Qwerty layout. Both shift keys as well as the control key
 function as the respective modifiers when held, but output a parenthesis or
 escape respectively when tapped. Ideally, the `'` key would also function as a
 control key when held, however this causes technical problems: quickly using
-shift combined with `'` sometimes causes `('` to be output rather than `"`. This
-is not a problem for ESC since it is rarely combined with shift. Unfortunately,
-all keys on the right border are either useful with key repeat or often used
-with shift, ruling them out for a second ctrl key.
+shift combined with `'` sometimes causes `('` to be output rather than `"`.
+While QMK provides several settings related to the tap/hold functionality, I
+have not found a combination that works reliably in this case. Unfortunately,
+neither backspace (often held for key repeat) nor `]` (often used with shift)
+are good candidates for a right side control key either.
 
 ### Colemak base layer
 
@@ -46,18 +46,21 @@ Same as the Qwerty layer except with Colemak layout for the center part.
 
 ![Number layer](images/number.png)
 
-Provides access to the number keys directly on the home row, with the respective
-F keys directly above. Also provides the four other keys commonly found in the
-number row as well as a delete key instead of the default backspace.
+Accessed by holding the blue number layer key.  Provides access to the number
+keys directly on the home row, with the respective F keys directly above. Also
+provides the four other keys commonly found on the number row as well as a
+delete key in place of the standard backspace.
 
 ### Symbol layer
 
 ![Symbol layer](images/symbol.png)
 
-Shifted versions of the keys in the number layer so that they can be used with
-only a single modifier key. The two parenthesis on 9 and 0 are provided for
-completeness only, they should be accessed using the two shift keys in the base
-layers instead. Also provides the F keys from F11 to F20.
+Accessed by holding the red symbol layer key, it contains shifted versions of
+the keys in the number layer so that they can be used with only a single
+modifier key. The two parenthesis on 9 and 0 are provided for completeness only,
+they should be accessed using the two shift keys in the base layers instead. The
+F keys from the number layers are replaced by their counterparts ten numbers
+higher.
 
 ### Adjust layer
 
@@ -65,7 +68,8 @@ layers instead. Also provides the F keys from F11 to F20.
 
 Provides access to keyboard settings (backlight brightness, Qwerty vs. Colemak,
 reset for flashing), as well as other shortcuts that should be a bit more
-difficult to access to avoid accidental activations.
+difficult to access to avoid accidental activations. Accessed by holding both
+the blue number and red symbol key.
 
 ### Navigation layer
 
@@ -73,9 +77,10 @@ difficult to access to avoid accidental activations.
 
 Several clusters of movement keys, each in the traditional Vim layout (although
 the arrow keys are shifted right by one key to be directly under the default
-home row keys for the right hand). The arrow keys including control are used to
-navigate between desktops/fullscreen windows in macOS. Also includes media
-controls (play/pause, previous, next) in a similar layout.
+home row keys for the right hand). Can be accessed using either of the yellow
+navigation layer keys. The arrow keys including control are used to navigate
+between desktops/fullscreen windows in macOS. Also includes media controls
+(play/pause, previous, next) in a similarly laid out cluster.
 
 ## Building
 
@@ -83,7 +88,7 @@ One way to build the keymap is to follow the instructions in the
 [QMK docs][qmk-docs], copying the `keymap` directory into the QMK installation.
 
 To avoid installing any tools globally, this repo contains a makefile that only
-uses the QMK version included as a submodule and and the `qmk` CLI installed
+uses the QMK version included as a submodule as well as the `qmk` CLI installed
 using pipenv. It works by symlinking the `keymap` directory at the right place
 in the `qmk` submodule directory.
 
