@@ -1,14 +1,16 @@
 # Planck keyboard layout
 
 Keyboard layout for my
-[Planck keyboard (rev. 4)](https://olkb.com/collections/planck) that I have been
-using since 2017. It was created with the following goals:
+[Planck keyboard (rev. 4)][planck] that I have been using and improving since
+2017. It uses the awesome [QMK firmware][qmk]. I had the following
+while creating it:
 
 * Support for both the Qwerty and [Colemak](https://colemak.com/) layouts
 * Easy access to commonly used programming symbols, most importantly `(`/`[`/`{`
-* Symmetric modifier keys whenever possible
+* Symmetric (left/right) modifier keys whenever possible
 * Quick access to escape for Vim usage
-* Use of tap/hold functionality to access keys quickly (tap key for symbol, hold for modifier)
+* Use of tap/hold functionality to access keys quickly (tap key for symbol, hold
+  for modifier)
 
 ## Layout
 
@@ -78,8 +80,7 @@ controls (play/pause, previous, next) in a similar layout.
 ## Building
 
 One way to build the keymap is to follow the instructions in the
-[QMK docs](https://docs.qmk.fm/), copying the `keymap` directory into the qmk
-installation.
+[QMK docs][qmk-docs], copying the `keymap` directory into the QMK installation.
 
 To avoid installing any tools globally, this repo contains a makefile that only
 uses the QMK version included as a submodule and and the `qmk` CLI installed
@@ -102,3 +103,6 @@ reset mode.
 * [Navigation layer](http://www.keyboard-layout-editor.com/##@@_a:7%3B&=&=%3Ci%20class%2F='kb%20kb-Multimedia-Rewind'%3E%3C%2F%2Fi%3E&=&=%3Ci%20class%2F='kb%20kb-Multimedia-Play-Pause'%3E%3C%2F%2Fi%3E&=%3Ci%20class%2F='kb%20kb-Multimedia-FastForwar'%3E%3C%2F%2Fi%3E&=&=&=Home&=Page%20Down&=Page%20Up&=End&=%3B&@_f:2%3B&=&_f:3%3B&=Ctrl%20%3Ci%20class%2F='kb%20kb-Arrows-Left'%3E%3C%2F%2Fi%3E&=Ctrl%20%3Ci%20class%2F='kb%20kb-Arrows-Down'%3E%3C%2F%2Fi%3E&=Ctrl%20%3Ci%20class%2F='kb%20kb-Arrows-Up'%3E%3C%2F%2Fi%3E&=Ctrl%20%3Ci%20class%2F='kb%20kb-Arrows-Right'%3E%3C%2F%2Fi%3E&=&=&=%3Ci%20class%2F='kb%20kb-Arrows-Left'%3E%3C%2F%2Fi%3E&=%3Ci%20class%2F='kb%20kb-Arrows-Down'%3E%3C%2F%2Fi%3E&=%3Ci%20class%2F='kb%20kb-Arrows-Up'%3E%3C%2F%2Fi%3E&=%3Ci%20class%2F='kb%20kb-Arrows-Right'%3E%3C%2F%2Fi%3E&=%3B&@=&=&=&=&=&=&=&=&=&=&=&=%3B&@=&=&=&_c=%23e5a100%3B&=Nav&_c=%230084c2&g:true%3B&=Num&_c=%23cccccc&g:false&sm=cherry%3B&=&=&_c=%23dd1126&g:true%3B&=Sym&_c=%23e5a100&g:false%3B&=Nav&_c=%23cccccc%3B&=&=&=)
 
 [kle]: http://www.keyboard-layout-editor.com/
+[qmk]: https://github.com/qmk/qmk_firmware
+[qmk-docs]: https://docs.qmk.fm/
+[planck]: https://olkb.com/collections/planck
