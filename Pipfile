@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-qmk = "*"
+qmk = "1.1.1"
 
 [dev-packages]
 
